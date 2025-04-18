@@ -2,6 +2,7 @@
 # coding=utf-8
 
 """
+Copyright(c) 2025 Joachim Janz
 Copyright(c) 2019 Radek Kaczorek  <rkaczorek AT gmail DOT com>
 
 This library is free software; you can redistribute it and/or
@@ -28,14 +29,14 @@ from flask_socketio import SocketIO
 from flask_cors import CORS
 import sys, os, configparser, re, ephem, numpy, datetime, time
 
-__author__ = 'Radek Kaczorek'
-__copyright__ = 'Copyright 2019, Radek Kaczorek'
+__author__ = 'Joachim Janz, Radek Kaczorek'
+__copyright__ = 'Copyright 2025, Joachim Janz; 2019, Radek Kaczorek'
 __license__ = 'GPL-3'
-__version__ = '2.0.0'
+__version__ = '2.1.0'
 
 app = Flask(__name__, static_folder='assets')
 CORS(app, resources={r"/*": {"origins": "https://tahti.local"}})
-socketio = SocketIO(app, cors_allowed_origins=["https://tahti.local"])
+socketio = SocketIO(app, cors_allowed_origins=["http://tahti.local","https://tahti.local"])
 thread = None
 
 class gpsTimeout(Exception):
